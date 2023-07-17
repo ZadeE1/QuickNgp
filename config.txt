@@ -2,3 +2,4 @@ ColmapTwoNerf=C:\Users\Zade\Desktop\Instant-NGP-for-RTX-3000-and-4000\scripts\co
 NgpExePath=C:\Users\Zade\Desktop\Instant-NGP-for-RTX-3000-and-4000\instant-ngp.exe
 Images=C:\Users\Zade\Desktop\Instant-NGP-for-RTX-3000-and-4000\data\robynface\images
 ProjectParentDir=C:\Users\Zade\Desktop\Instant-NGP-for-RTX-3000-and-4000\data\robynface
+UseConda=1
