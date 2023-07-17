@@ -3,11 +3,20 @@
 rem batch var is refering to the folder that this bat file is sitting in
 set batch=%~dp0
 
+
+set nl=^&
+set configboiler=ColmapTwoNerf=%nl%
+NgpExePath=%nl%
+Images=%nl%
+ProjectDir=%nl%
+UseConda=0
+
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
 set config=%batch%config.txt
-if not exists "%config%" (
+if not exist %config% (
     echo config.txt doesnt exist
     echo creating config.txt 
+    echo %configboiler% > config.txt
 )
 
 rem loads the config file
