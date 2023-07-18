@@ -22,11 +22,11 @@ if not exist %config% (
 rem loads the config file and checks to see if all config feilds are valid
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
-if not defined %NgpPath% (
+if not defined %ProjectDir% (
     echo - checking config 1/3
 ) else (
     call cls
-    echo - NgpExePath Must be reconfigured
+    echo - ProjectDir Must be reconfigured
     echo - #############################################################
     echo -   WARNING   WARNING   WARNING   WARNING   WARNING   WARNING
     echo - #############################################################
@@ -34,10 +34,10 @@ if not defined %NgpPath% (
     pause
     exit 1
 )
-if not defined %ProjectDir% (
+if not defined %NgpPath% (
     echo - checking config 2/3
 ) else (
-    echo - ProjectDir Must be reconfigured
+    echo - NgpPath Must be reconfigured
     pause
     exit 1
 )
