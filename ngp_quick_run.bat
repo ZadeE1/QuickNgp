@@ -71,7 +71,7 @@ if %UseConda% == 1 (call conda activate & echo - activating conda base)
 
 rem checks with the user to see if they 
 :AskUseColmap
-set /p colmap_run="- use colmap to convert images for the nerf model to be able to use them - required on first run(Y/N): "
+set /p colmap_run="- use colmap to convert images for the nerf model to be able to use them - required on first run (Y/N): "
 if not "%colmap_run%" equ "N" if not "%colmap_run%" equ "Y" goto AskUseColmap
 
 
