@@ -25,7 +25,12 @@ for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 if not defined %NgpPath% (
     echo - checking config 1/3
 ) else (
+    call cls
     echo - NgpExePath Must be reconfigured
+    echo - #############################################################
+    echo -   WARNING   WARNING   WARNING   WARNING   WARNING   WARNING
+    echo - #############################################################
+    echo - Make sure that the project directory is EMPTY to avoid any problems
     pause
     exit 1
 )
@@ -46,6 +51,7 @@ if not defined %UseConda% (
 
 rem changes dir into the project folder which is where colmap will be run in and also making instant ngp work as intended
 echo - changing directory to project folder: %ProjectDir%
+echo - if you would like to change the project directory, please change it in config.txt
 cd %ProjectDir%
 
 
@@ -65,16 +71,16 @@ if %UseConda% == 1 (call conda activate & echo - activating conda base)
 
 rem checks with the user to see if they 
 :AskUseColmap
-set /p colmap_run="- Use Colmap to convert images for the nerf model to be able to use them - required on first run(Y/N): "
+set /p colmap_run="- use colmap to convert images for the nerf model to be able to use them - required on first run(Y/N): "
 if not "%colmap_run%" equ "N" if not "%colmap_run%" equ "Y" goto AskUseColmap
 
 
 :continue
 rem runs colmap2nerf.py only with Y is selected
-if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images%) else (echo - Not running colmap) 
+if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images%) else (echo - not running colmap) 
 
 rem runs instant ngp, opening automatically the colmap project 
-echo - Running instant ngp
+echo - running instant ngp
 %NgpPath%instant-ngp.exe %ProjectDir% 
 
 pause
