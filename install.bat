@@ -23,8 +23,8 @@ if exist %batch%instant-ngp (
     goto continue
 )
 
-wget -c https://github.com/NVlabs/instant-ngp.git -O instant-ngp.zip
-
+call certutil -urlcache -split -f https://github.com/NVlabs/instant-ngp.git %batch%instant-ngp.zip
+call tar -xvf instant-ngp.zip
 
 :continue
 rem loads the config file
