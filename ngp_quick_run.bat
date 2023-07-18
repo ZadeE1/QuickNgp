@@ -58,11 +58,12 @@ cd %ProjectDir%
 set ColmapTwoNerf=%NgpPath%scripts\colmap2nerf.py
 set Images=%ProjectDir%\images
 
+echo %Images% %NgpPath%
 if not exist %Images% (
     echo - Images folder is being created
     call mkdir images
     pause
-    exit 1
+    exit 0
 )
 
 
@@ -81,6 +82,7 @@ if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --ima
 
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
-%NgpPath%instant-ngp.exe %ProjectDir% 
+call %NgpPath%\instant-ngp.exe %ProjectDir% 
 
+cd %batch%
 pause
