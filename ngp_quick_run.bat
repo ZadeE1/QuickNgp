@@ -3,8 +3,8 @@
 rem batch var is refering to the folder that this bat file is sitting in
 set batch=%~dp0
 
+rem trim function is used to remove trailing whitespaces when reading from the config.txt
 
-set nl=&echo.
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
@@ -22,7 +22,7 @@ if not exist %config% (
 rem loads the config file and checks to see if all config feilds are valid
 for /f "eol=; delims=;+" %%a in (%config%) do set "%%a"
 
-
+echo - if 
 if not defined %ProjectDir% (
     echo - checking config 1/3
     if not exist %ProjectDir% (
@@ -63,6 +63,9 @@ if not defined %UseConda% (
     pause
     exit 1
 )
+
+rem this removes trailing white spaces so that windows can properly determine the projectdir
+CALL :TRIM %ProjectDir% ProjectDir
 
 rem changes dir into the project folder which is where colmap will be run in and also making instant ngp work as intended
 echo - changing directory to project folder: %ProjectDir%
@@ -107,7 +110,12 @@ if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --ima
 
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
-call %NgpPath%\instant-ngp.exe %ProjectDir% 
+cd %NgpPath%
+call instant-ngp.exe %ProjectDir% 
 
 cd %batch%
 pause
+
+:TRIM
+SET %2=%1
+GOTO :EOF
