@@ -1,3 +1,0 @@
-NgpPath=c:\Users\Zade\Desktop\NgpQuick\Instant-NGP-for-RTX-3000-and-4000 
-ProjectDir=  
-UseConda=0

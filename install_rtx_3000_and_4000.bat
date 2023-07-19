@@ -13,7 +13,7 @@ set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
     echo - creating config.txt 
-    (echo NgpPath= && echo ProjectDir= && echo UseConda=0) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > config.txt
 )
 
 set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
@@ -45,7 +45,7 @@ echo - reconfiguring config.txt to make NgpPath to: %batch%Instant-NGP-for-RTX-3
 set config=%batch%config.txt
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
-(echo NgpPath=%batch%Instant-NGP-for-RTX-3000-and-4000 && echo ProjectDir=%ProjectDir% && echo UseConda=%UseConda%) > config.txt
+(echo NgpPath=%batch%Instant-NGP-for-RTX-3000-and-4000 && echo ProjectDir=%ProjectDir%) > config.txt
 
 
 echo - attempting to install required python packages
@@ -57,6 +57,6 @@ call pip install -r requirements.txt
 cd %batch%
 
 echo - #####################################################
-echo - install completed
+echo - install completed successfully
 pause
 exit 0

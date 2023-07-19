@@ -12,7 +12,7 @@ set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
     echo - creating/writing to config.txt 
-    (echo NgpPath= && echo ProjectDir= && echo UseConda=0) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > config.txt
     echo - done
     echo - program will not work until config paths are set
     pause
@@ -22,9 +22,10 @@ if not exist %config% (
 rem loads the config file and checks to see if all config feilds are valid
 for /f "eol=; delims=;+" %%a in (%config%) do set "%%a"
 
-echo - if 
+echo - if ''The syntax of the command is incorrect.'' error message shows up, 
+echo - it usually means that there is something that has not been configured in config.txt 
 if not defined %ProjectDir% (
-    echo - checking config 1/3
+    echo - checking config 1/2
     if not exist %ProjectDir% (
         echo - ProjectDir Must be reconfigured since it doesnt exist
         echo - they could be a sneaky space at the end of the filepath that you inputted
@@ -32,37 +33,17 @@ if not defined %ProjectDir% (
         pause
         exit 1
     )
-) else (
-    echo - ProjectDir Must be reconfigured
-    echo - #############################################################
-    echo -   WARNING   WARNING   WARNING   WARNING   WARNING   WARNING
-    echo - #############################################################
-    echo - Make sure that the project directory is new and empty before 
-    echo - adding it to the config.txt
-    pause
-    exit 1
-)
+) 
 
 if not defined %NgpPath% (
-    echo - checking config 2/3
+    echo - checking config 2/2
     if not exist %NgpPath% (
         echo - NgpPath Must be reconfigured since it doesnt exist
         pause
         exit 1
     )
-) else (
-    echo hi
-    pause
-    exit 1
-)
+) 
 
-if not defined %UseConda% (
-    echo - checking config 3/3
-) else (
-    echo - UseConda Must be reconfigured
-    pause
-    exit 1
-)
 
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
