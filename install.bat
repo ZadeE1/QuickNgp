@@ -3,8 +3,15 @@
 rem batch var is refering to the folder that this bat file is sitting in
 set batch=%~dp0
 
-
 cd %batch%
+
+set config=%batch%config.txt
+
+if not exist %config% (
+    echo - config.txt doesnt exist
+    echo - creating config.txt 
+    (echo NgpPath= && echo ProjectDir= && echo UseConda=0) > config.txt
+)
 
 set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
 
@@ -18,25 +25,27 @@ if %condapause% == Y (
 
 echo - downloading instant ngp
 
-if exist %batch%instant-ngp (
+if exist %batch%Instant-NGP-for-RTX-3000-and-4000 (
     echo - instant ngp is already downloaded
     goto continue
 )
 
-call certutil -urlcache -split -f https://github.com/NVlabs/instant-ngp.git %batch%instant-ngp.zip
+call certutil -urlcache -split -f https://github.com/NVlabs/instant-ngp/releases/download/continuous/Instant-NGP-for-RTX-3000-and-4000.zip instant-ngp.zip
 call tar -xvf instant-ngp.zip
 
 :continue
 rem loads the config file
-echo - reconfiguring config.txt to make NgpPath to: %batch%instant-ngp
+echo - reconfiguring config.txt to make NgpPath to: %batch%Instant-NGP-for-RTX-3000-and-4000
 set config=%batch%config.txt
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
-(echo NgpPath=%batch%instant-ngp && echo ProjectDir=%ProjectDir% && echo UseConda=%UseConda%) > config.txt
+(echo NgpPath=%batch%Instant-NGP-for-RTX-3000-and-4000 && echo ProjectDir=%ProjectDir% && echo UseConda=%UseConda%) > config.txt
 
 echo - attempting to install required python packages
-cd %batch%instant-ngp
+cd %batch%Instant-NGP-for-RTX-3000-and-4000
 call pip install -r requirements.txt
 
 cd %batch%
+
+echo - install completed
 pause
