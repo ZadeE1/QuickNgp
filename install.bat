@@ -23,15 +23,17 @@ if %condapause% == Y (
 
 
 
-echo - downloading instant ngp
 
 if exist %batch%Instant-NGP-for-RTX-3000-and-4000 (
     echo - instant ngp is already downloaded
     goto continue
+) else (
+    echo - downloading instant ngp
+    call certutil -urlcache -split -f https://github.com/NVlabs/instant-ngp/releases/download/continuous/Instant-NGP-for-RTX-3000-and-4000.zip instant-ngp.zip
+    call tar -xvf instant-ngp.zip
+
 )
 
-call certutil -urlcache -split -f https://github.com/NVlabs/instant-ngp/releases/download/continuous/Instant-NGP-for-RTX-3000-and-4000.zip instant-ngp.zip
-call tar -xvf instant-ngp.zip
 
 :continue
 rem loads the config file
