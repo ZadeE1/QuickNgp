@@ -47,6 +47,7 @@ if not defined %NgpPath% (
 
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
+CALL :TRIM %NgpPath% NgpPath
 
 rem changes dir into the project folder which is where colmap will be run in and also making instant ngp work as intended
 echo - changing directory to project folder: %ProjectDir%
@@ -54,7 +55,7 @@ echo - if you would like to change the project directory, please change it in co
 cd %ProjectDir%
 
 
-set ColmapTwoNerf=%NgpPath%scripts\colmap2nerf.py
+set ColmapTwoNerf=%NgpPath%\scripts\colmap2nerf.py
 set Images=%ProjectDir%\images
 rem checks if images dir exists else it creates them
 if not exist %Images% (
@@ -74,7 +75,7 @@ set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): 
 if %condapause% == Y (
     set /p condaenv=" - which conda env you would like to use?: "
     echo - activating %condaenv%
-    call conda activate %condaenv%
+    call conda activate base
 ) 
 
 
@@ -87,6 +88,8 @@ if not "%colmap_run%" equ "N" if not "%colmap_run%" equ "Y" goto AskUseColmap
 
 :continue
 rem runs colmap2nerf.py only with Y is selected
+cd %ProjectDir%
+echo - %cd%
 if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images%) else (echo - not running colmap) 
 
 rem runs instant ngp, opening automatically the colmap project 
