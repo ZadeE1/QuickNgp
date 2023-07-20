@@ -58,9 +58,10 @@ cd %batch%
 
 cd %batch%Instant-NGP-for-RTX-3000-and-4000\scripts
 call download_colmap.bat
+call download_ffmpeg.bat
 
 echo - #####################################################
 echo - install completed successfully
-call powershell
+
 pause
 exit 0
