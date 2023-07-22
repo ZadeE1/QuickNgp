@@ -3,6 +3,8 @@
 - **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
 -  **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
+  
+- **CMAKE & GIT MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
 ## **Things to know**
 - any paths with a space will cause errors which include:
