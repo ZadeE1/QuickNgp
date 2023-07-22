@@ -1,10 +1,10 @@
-### **Makes creating a Nerf, simple and easy**
+# **Makes creating a Nerf, simple and easy**
 
-### **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
+- **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
-### **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
+-  **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
 
-### **Things to know**
+## **Things to know**
 - any paths with a space will cause errors which include:
   - the location where you cloned/downloaded this repo
     
