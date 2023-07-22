@@ -23,7 +23,7 @@
 - if your GPU is not from the 3000 or 4000 you will need to build instant ngp yourself refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) and edit NgpPath in config.txt to where you built instant-ngp
 
 
-### **How to use**
+## **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
    
 2. run the **install_rtx_3000_and_4000.bat**
