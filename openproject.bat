@@ -53,7 +53,7 @@ CALL :TRIM %NgpPath% NgpPath
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
 cd %NgpPath%
-call instant-ngp.exe %ProjectDir% 
+call instant-ngp.exe %ProjectDir% --no-train
 
 cd %batch%
 pause
