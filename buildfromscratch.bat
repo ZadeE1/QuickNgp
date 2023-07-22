@@ -21,7 +21,7 @@ echo - installing instant-ngp
 call git clone -q https://github.com/NVlabs/instant-ngp.git instant-ngp
 cd instant-ngp
 call git submodule update --init --recursive
-
+cd %batch%
 
 rem loads the config file and updates it
 echo - reconfiguring config.txt to make NgpPath to: %batch%instant-ngp
