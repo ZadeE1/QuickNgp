@@ -28,7 +28,7 @@
 ## **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
    
-2. run the **install_rtx_3000_and_4000.bat**
+2. run the **install_rtx_3000_and_4000.bat** or **buildfromscratch.bat**
    
 3. open the config.txt file and paste the full path to any **empty folder** right after the "=", it should look something like this "ProjectDir=C:\project" **note**: the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data
    
