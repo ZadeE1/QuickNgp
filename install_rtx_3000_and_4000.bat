@@ -53,6 +53,8 @@ for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 rem loads new config vars
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
+CALL :TRIM %NgpPath% NgpPath
+
 echo - attempting to install required python packages
 echo - #####################################################
 
@@ -61,10 +63,11 @@ cd %NgpPath%
 call pip install -r requirements.txt
 echo - #####################################################
 
+echo - changing dir to %NgpPath%\scripts
 cd %NgpPath%\scripts
 
 rem clears the eternal\colmap, this is because it removes an conflict when running colmap, possible running the non cuda instead of the cuda version
-rem @RD /S %NgpPath%\external\colmap
+@RD /S /Q "%NgpPath%\external\colmap"
 
 rem asks user if they want to install colmap for cuda
 :colmapask
@@ -92,3 +95,7 @@ echo - install completed successfully
 cd %batch%
 pause
 exit 0
+
+:TRIM
+SET %2=%1
+GOTO :EOF
