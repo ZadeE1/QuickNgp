@@ -1,6 +1,7 @@
 **Makes making a Nerf, simple and easy**
 
 **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
+
 **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
 
 **Things to know**
