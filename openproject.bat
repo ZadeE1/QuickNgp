@@ -57,6 +57,7 @@ call instant-ngp.exe %ProjectDir%
 
 cd %batch%
 pause
+exit 0
 
 :TRIM
 SET %2=%1
