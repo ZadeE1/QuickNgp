@@ -63,6 +63,9 @@ echo - #####################################################
 
 cd %NgpPath%\scripts
 
+rem clears the eternal\colmap, this is because it removes an conflict when running colmap, possible running the non cuda instead of the cuda version
+rem @RD /S %NgpPath%\external\colmap
+
 rem asks user if they want to install colmap for cuda
 :colmapask
 set /p colmapcuda=" - install colmap for cuda ( Y/N ): "
@@ -71,7 +74,7 @@ if %colmapcuda% == Y (
     call powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/colmap/colmap/releases/download/3.7/COLMAP-3.7-windows-cuda.zip', 'colmap.zip')"
 
     echo - Unzipping...
-    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force
+    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force 
 ) else (
     if not %colmapcuda% == N (
         goto colmapask
@@ -80,7 +83,7 @@ if %colmapcuda% == Y (
     call powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/colmap/colmap/releases/download/3.7/COLMAP-3.7-windows-no-cuda.zip', 'colmap.zip')"
 
     echo - Unzipping...
-    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force
+    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force 
 )
 rem installs ffmpeg
 call download_ffmpeg.bat
