@@ -12,7 +12,8 @@
 - if you don't have anaconda or miniconda installed and come across " - use conda (Y/N): " simply reply **N**
 - dir/path/folder may be used interchangeably in the command line prompts and in this repo
 - any numerical questions can only be responded to in numbers or it can create unwanted errors
-- when 
+- when running the **install_rtx_3000_and_4000.bat** you agree to N
+
 
 **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
@@ -21,3 +22,5 @@
 4. place any video that you want to convert into a nerf inside the project folder, then run the **videotoimages.bat** it will ask " - Name of video inside **Where ever you decided the project path to be**: " and respond with the video file name - an example **VIDEO.MP4** it will then ask, " - Frames per second ( 5 recommended ): " - high fps will produce better nerf models but will negatively impact preformance
 5. run **imagestonerf.bat** the speed of this process may depend on what hardware you are running
 6. (**OPTIONAL**) running **openproject.bat** will open instant-ngp and immediately start training
+
+this may still have bugs and it would be appreciated if you create an issue post
