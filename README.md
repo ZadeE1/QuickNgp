@@ -1,6 +1,6 @@
 **makes making a Nerf, simple and easy**
 
-**requirements**
+**Requires Python To Be Installed, 3.8 And Above**
 
 **Things to know**
 - any paths with a space will cause errors which include:
