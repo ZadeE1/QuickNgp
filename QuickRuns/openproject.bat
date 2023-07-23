@@ -1,25 +1,15 @@
+
 @echo off
 
 rem batch var is refering to the folder that this bat file is sitting in
-set batch=%~dp0
+for %%i in ("%~dp0..") do set "folder=%%~fi"
+call :TRIM %folder% folder
+set batch=%folder%\
 
-goto GETOPTS
+cd %batch%
 
-:Help
-echo sumit
-pause
-exit 0
+rem trim function is used to remove trailing whitespaces when reading from the config.txt
 
-:GETOPTS
-if /I "%1" == "-h" call :Help 
-if /I "%1" == "--video" set video=%2 & shift & shift
-if /I "%1" == "--fps" set fps=%2 & shift & shift
-if  "%1" == "" goto continue else goto GETOPTS
-:continue
-
-
-if defined video call :TRIM %video% video 
-if defined fps call :TRIM %fps% fps 
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
@@ -49,7 +39,7 @@ if not defined %ProjectDir% (
         exit 1
     )
 ) 
-rem path checking
+
 if not defined %NgpPath% (
     echo - checking config 2/2
     if not exist %NgpPath% (
@@ -59,43 +49,19 @@ if not defined %NgpPath% (
     )
 ) 
 
-rem setting path for images
-set Images=%ProjectDir%\images
-CALL :TRIM %Images% Images
-
-rem checks if images dir exists else it creates it
-if not exist %Images% (
-    echo - Images folder is being created inside %ProjectDir%
-    cd %ProjectDir%
-    call mkdir images
-    
-)
 
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
 
-if not defined video set /p video=" - Name of video inside %ProjectDir%: "
-set video=%ProjectDir%\%video%
+rem runs instant ngp, opening automatically the colmap project 
+echo - running instant ngp
+cd %NgpPath%
+call instant-ngp.exe %ProjectDir% --no-train
 
-if not defined fps set /p fps=" - Frames per second ( 5 recommended ): "
-CALL :TRIM %fps% fps
-
-
-if not exist %video% (
-    echo - %video% does not exist
-    pause
-    exit 1
-)
-cd %ProjectDir%\images
-
-call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
-
+cd %batch%
 pause
 exit 0
-
-
-
 
 :TRIM
 SET %2=%1

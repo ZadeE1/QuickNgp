@@ -1,7 +1,11 @@
 @echo off
 
 rem batch var is refering to the folder that this bat file is sitting in
-set batch=%~dp0
+for %%i in ("%~dp0..") do set "folder=%%~fi"
+call :TRIM %folder% folder
+set batch=%folder%\
+
+cd %batch%
 
 goto GETOPTS
 
