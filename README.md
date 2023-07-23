@@ -1,4 +1,5 @@
 # **Makes creating a Nerf, simple and easy**
+  * based of [Insant-ngp](https://github.com/NVlabs/instant-ngp)
 
 - **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
@@ -62,5 +63,4 @@
 
 
 
-this may still have bugs and it would be appreciated if you create an issue post describing your issue
 
