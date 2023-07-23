@@ -40,11 +40,13 @@
 
 
 ## **Command line args**
-# Intall bats
+### Intall bats
 | Command             | Use       |
 | :-------------: | ------------- |
 | -h              | Prints all commands |
-| --conda  *env-name*       | Activates the conda environment you chose |
+| --conda  env-name       | Activates the conda environment you chose |
+| --colmapforcuda (Y/N) | Installs the cuda version of colmap for supported devices|
+
 
 
 
