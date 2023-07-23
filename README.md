@@ -20,15 +20,15 @@
   
 - any numerical questions can only be responded to in numbers or it can create unwanted errors
   
-- when running the `**install_rtx_3000_and_4000.bat**` you agree to the Licence that comes with this repo
+- when running the `install_rtx_3000_and_4000.bat` you agree to the Licence that comes with this repo
   
-- if your GPU is not from the 3000 or 4000 you will need to build instant ngp yourself refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run **buildfromscratch.bat** and edit NgpPath in config.txt to where you built instant-ngp
+- if your GPU is not from the 3000 or 4000 you will need to build instant ngp yourself refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run `buildfromscratch.bat` and edit NgpPath in config.txt to where you built instant-ngp
 
 
 ## **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
    
-2. run the **install_rtx_3000_and_4000.bat** or **buildfromscratch.bat** inside Installs
+2. run the `install_rtx_3000_and_4000.bat` or `buildfromscratch.bat` inside Installs
    
 3. open the config.txt file and paste the full path to any **empty folder** right after the "=", it should look something like this "ProjectDir=C:\project" **note**: the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data
    
@@ -44,20 +44,20 @@
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
-| --conda  ***env-name***| Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
-| --colmapforcuda ***(Y/N)***| Installs the cuda version of colmap for supported devices|
+| --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
+| --colmapforcuda `(Y/N)` | Installs the cuda version of colmap for supported devices|
 ### videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
-| --video  ***Vid name*** | The target video to convert to images inside the project dir|
-| --fps ***fps***         | How many frames you will extract for every second of the video|
+| --video  `Vid name`     | The target video to convert to images inside the project dir|
+| --fps `fps`             | How many frames you will extract for every second of the video|
 ### imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
-| --conda  ***env-name***| Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
-| --colmap ***(Y/N)***    | Runs colmap in order to convert images into a nerf       |
+| --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
+| --colmaprun `(Y/N)`    | Runs colmap in order to convert images into a nerf       |
 
 
 
