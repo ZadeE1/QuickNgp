@@ -42,7 +42,7 @@ if not exist "%config%" (
 
 rem asks the user if they want to use conda and if already declared using the cmdline arg it activates the declared env
 echo "%useconda%"
-if %useconda% == 0 goto afteraskconda
+if "%useconda%" == 0 goto afteraskconda
 :condaask
 if defined useconda (
     if not useconda == 0 (

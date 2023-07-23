@@ -84,7 +84,7 @@ if not exist %Images% (
 
 
 
-if %useconda% == 0 goto afteraskconda
+if "%useconda%" == 0 goto afteraskconda
 :condaask
 if defined useconda (
     if not useconda == 0 (
