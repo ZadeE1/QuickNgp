@@ -16,21 +16,18 @@ if not exist "%config%" (
     (echo NgpPath= && echo ProjectDir= ) > config.txt
 )
 
-for /f "eol=; delims=;+" %%a in (%config%) do set %%a
-(echo NgpPath=%NgpPath% && echo ProjectDir=%ProjectDir%) > config.txt
+rem Get the path of the dropped file.
+set "droppedPath=%~1"
 
-rem loads new config vars and trims ngppath so no errors happen
-for /f "eol=; delims=;+" %%a in (%config%) do set %%a
-CALL :TRIM %NgpPath% NgpPath
-
-rem Get the path of all the dropped files.
-set "droppedFiles=%*"
-echo %~
-
-rem Echo the path of each dropped file.
-for %%f in (%droppedFiles%) do (
-  echo The dropped file is: %%f
+rem Check if the file was dropped.
+if not defined droppedPath (
+  echo No path was dropped.
+  pause
+  exit 0
 )
+
+for /f "eol=; delims=;+" %%a in (%config%) do set %%a
+(echo NgpPath=%NgpPath% && echo ProjectDir=%droppedPath%) > config.txt
 
 rem Pause the batch file so the user can see the output.
 pause
