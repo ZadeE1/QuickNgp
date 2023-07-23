@@ -3,8 +3,23 @@
 rem batch var is refering to the folder that this bat file is sitting in
 set batch=%~dp0
 
-rem trim function is used to remove trailing whitespaces when reading from the config.txt
+goto GETOPTS
 
+:Help
+echo sumit
+pause
+exit 0
+
+:GETOPTS
+if /I "%1" == "-h" call :Help 
+if /I "%1" == "--conda" set useconda=%2 & shift & shift
+if /I "%1" == "--colmaprun" set colmap_run=%2 & shift & shift
+if  "%1" == "" goto continue else goto GETOPTS
+:continue
+
+
+if defined useconda call :TRIM %useconda% useconda 
+if defined colmap_run call :TRIM %colmap_run% colmap_run 
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
@@ -69,19 +84,30 @@ if not exist %Images% (
 
 
 
-rem loads conda 
-set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
+rem asks the user if they want to use conda and if already declared using the cmdline arg it activates the declared env
+if defined useconda (
+    echo - activating %useconda% 
+    call conda activate "%useconda%" 
+    goto afteraskconda
+)  
+    set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
+    if %condapause% == Y (
+        set /p condaenv=" - which conda env you would like to use?: "
+        echo - activating %condaenv%
+        call conda activate %condaenv%
+    ) else (
+        if not %condapause% == N (
+            goto condaask
+        )
+    )
 
-if %condapause% == Y (
-    set /p condaenv=" - which conda env you would like to use?: "
-    echo - activating %condaenv%
-    call conda activate base
-) 
 
+
+:afteraskconda
 
 rem checks with the user to see if they 
 :AskUseColmap
-set /p colmap_run="- use colmap to convert images for the nerf model to be able to use them - required at least once (Y/N): "
+if not defined colmap_run set /p colmap_run="- use colmap to convert images for the nerf model to be able to use them - required at least once (Y/N): "
 if not "%colmap_run%" equ "N" if not "%colmap_run%" equ "Y" goto AskUseColmap
 
 

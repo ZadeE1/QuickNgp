@@ -3,6 +3,24 @@
 rem batch var is refering to the folder that this bat file is sitting in
 set batch=%~dp0
 
+goto GETOPTS
+
+:Help
+echo sumit
+pause
+exit 0
+
+:GETOPTS
+if /I "%1" == "-h" call :Help 
+if /I "%1" == "--video" set video=%2 & shift & shift
+if /I "%1" == "--fps" set fps=%2 & shift & shift
+if  "%1" == "" goto continue else goto GETOPTS
+:continue
+
+
+if defined video call :TRIM %video% video 
+if defined fps call :TRIM %fps% fps 
+
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
 set config=%batch%config.txt
@@ -31,7 +49,7 @@ if not defined %ProjectDir% (
         exit 1
     )
 ) 
-
+rem path checking
 if not defined %NgpPath% (
     echo - checking config 2/2
     if not exist %NgpPath% (
@@ -41,10 +59,11 @@ if not defined %NgpPath% (
     )
 ) 
 
+rem setting path for images
 set Images=%ProjectDir%\images
 CALL :TRIM %Images% Images
 
-rem checks if images dir exists else it creates them
+rem checks if images dir exists else it creates it
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
     cd %ProjectDir%
@@ -56,13 +75,13 @@ rem this removes trailing white spaces so that windows can properly determine th
 CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
 
-set /p video=" - Name of video inside %ProjectDir%: "
+if not defined video set /p video=" - Name of video inside %ProjectDir%: "
 set video=%ProjectDir%\%video%
 
-set /p extractionrate=" - Frames per second ( 5 recommended ): "
-CALL :TRIM %extractionrate% extractionrate
+if not defined fps set /p fps=" - Frames per second ( 5 recommended ): "
+CALL :TRIM %fps% fps
 
-echo %video%
+
 if not exist %video% (
     echo - %video% does not exist
     pause
@@ -70,7 +89,7 @@ if not exist %video% (
 )
 cd %ProjectDir%\images
 
-call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%extractionrate% "frame_%%%%03d.png"
+call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
 
 pause
 exit 0
