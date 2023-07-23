@@ -41,7 +41,7 @@ $$ based of [Insant-ngp](https://github.com/NVlabs/instant-ngp)
 
 
 ## **Command line args**
-### Intall~bats
+### Intall bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
