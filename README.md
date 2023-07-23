@@ -44,7 +44,7 @@
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
-| --conda  ***env-name***| Activates the conda environment you chose                 |
+| --conda  ***env-name***| Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda ***(Y/N)***| Installs the cuda version of colmap for supported devices|
 ### videotoimages.bat
 | Command                 | Use                                                      |
@@ -56,7 +56,7 @@
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
-| --conda  ***env-name*** | Activates the conda environment you chose                |
+| --conda  ***env-name***| Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmap ***(Y/N)***    | Runs colmap in order to convert images into a nerf       |
 
 
