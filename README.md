@@ -28,15 +28,15 @@
 ## **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
    
-2. run the **install_rtx_3000_and_4000.bat** or **buildfromscratch.bat**
+2. run the **install_rtx_3000_and_4000.bat** or **buildfromscratch.bat** inside Installs
    
 3. open the config.txt file and paste the full path to any **empty folder** right after the "=", it should look something like this "ProjectDir=C:\project" **note**: the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data
    
-4. place any video that you want to convert into a nerf inside the project folder, then run the **videotoimages.bat** it will ask " - Name of video inside **Where ever you decided the project path to be**: " and respond with the video file name - for example, **VIDEO.MP4** it will then ask, " - Frames per second ( 5 recommended ): " - high fps will produce better nerf models but will negatively impact performance
+4. place any video that you want to convert into a nerf inside the project folder, then run the **videotoimages.bat** in QuickRuns it will ask " - Name of video inside **Where ever you decided the project path to be**: " and respond with the video file name - for example, **VIDEO.MP4** it will then ask, " - Frames per second ( 5 recommended ): " - high fps will produce better nerf models but will negatively impact performance
    
-5. run **imagestonerf.bat** the speed of this process may depend on what hardware you are running
+5. run **imagestonerf.bat** in QuickRuns the speed of this process may depend on what hardware you are running
     
-6. (**OPTIONAL**) running **openproject.bat** will quickly open instant-ngp
+6. (**OPTIONAL**) running **openproject.bat** in QuickRuns will quickly open instant-ngp
 
 
 ## **Command line args**
