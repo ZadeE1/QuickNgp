@@ -1,4 +1,4 @@
-# 1. **Makes creating a Nerf, simple and easy**
+# **Makes creating a Nerf, simple and easy**
 
 - **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
@@ -6,7 +6,7 @@
   
 - **CMAKE & GIT MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
-## 1.1. **Things to know**
+## **Things to know**
 - any paths with a space will cause errors which include:
   - the location where you cloned/downloaded this repo
     
@@ -25,7 +25,7 @@
 - if your GPU is not from the 3000 or 4000 you will need to build instant ngp yourself refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run **buildfromscratch.bat** and edit NgpPath in config.txt to where you built instant-ngp
 
 
-## 1.2. **How to use**
+## **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no **spaces**
    
 2. run the **install_rtx_3000_and_4000.bat** or **buildfromscratch.bat**
@@ -39,7 +39,10 @@
 6. (**OPTIONAL**) running **openproject.bat** will open instant-ngp and 
 
 
-##
+## **Command line args**
+# Intall bats
+
+
 
 this may still have bugs and it would be appreciated if you create an issue post describing the bug 
 
