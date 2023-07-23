@@ -31,3 +31,4 @@ for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
 rem Pause the batch file so the user can see the output.
 pause
+exit 0
