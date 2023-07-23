@@ -41,6 +41,10 @@
 
 ## **Command line args**
 # Intall bats
+| Command             | Use       |
+| :-------------: | ------------- |
+| -h              | Prints all commands |
+| --conda  *env-name*       | Activates the conda environment you chose |
 
 
 
