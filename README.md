@@ -62,5 +62,5 @@
 
 
 
-this may still have bugs and it would be appreciated if you create an issue post describing the bug 
+this may still have bugs and it would be appreciated if you create an issue post describing your issue
 
