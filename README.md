@@ -41,21 +41,21 @@ $$ based of [Insant-ngp](https://github.com/NVlabs/instant-ngp)
 
 
 ## **Command line args**
-### Intall bats
+### Intall~bats
 | Command                 | Use                                                      |
-| :---------------------: | -------------------------------------------------------- |
+| :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
 | --conda  ***env-name***| Activates the conda environment you chose                 |
 | --colmapforcuda ***(Y/N)***| Installs the cuda version of colmap for supported devices|
 ### videotoimages.bat
 | Command                 | Use                                                      |
-| :---------------------: | -------------------------------------------------------- |
+| :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
 | --video  ***Vid name*** | The target video to convert to images inside the project dir|
 | --fps ***fps***         | How many frames you will extract for every second of the video|
 ### imagestonerf.bat
 | Command                 | Use                                                      |
-| :---------------------: | -------------------------------------------------------- |
+| :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints all commands                                      |
 | --conda  ***env-name*** | Activates the conda environment you chose                |
 | --colmap ***(Y/N)***    | Runs colmap in order to convert images into a nerf       |
