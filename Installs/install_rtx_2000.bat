@@ -1,8 +1,15 @@
 @echo off
 
+rem goes up 1 dir so that 
+
+
 rem batch var is refering to the folder that this bat file is sitting in
-set batch=%~dp0
+for %%i in ("%~dp0..") do set "folder=%%~fi"
+call :TRIM %folder% folder
+set batch=%folder%\
+
 cd %batch%
+
 
 goto GETOPTS
 
@@ -22,10 +29,11 @@ if  "%1" == "" goto continue else goto GETOPTS
 if defined useconda call :TRIM %useconda% useconda 
 if defined colmapcuda call :TRIM %colmapcuda% colmapcuda 
 
-set versionngp=Instant-NGP-for-RTX-3000-and-4000
+set versionngp=Instant-NGP-for-RTX-2000
 set config=%batch%config.txt
+call :TRIM %config% config
 
-if not exist %config% (
+if not exist "%config%" (
     echo - config.txt doesnt exist
     echo - creating config.txt 
     (echo NgpPath= && echo ProjectDir= ) > config.txt
@@ -33,6 +41,7 @@ if not exist %config% (
 
 
 rem asks the user if they want to use conda and if already declared using the cmdline arg it activates the declared env
+:condaask
 if defined useconda (
     echo - activating %useconda% 
     call conda activate "%useconda%" 
