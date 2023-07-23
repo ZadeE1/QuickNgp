@@ -20,7 +20,7 @@ exit 0
 
 :GETOPTS
 if /I "%1" == "-h" call :Help 
-if /I "%1" == "--conda" set useconda=%2 & shift & shift
+if /I "%1" == "--conda" set useconda=%2 & shift & shift 
 if /I "%1" == "--colmapforcuda" set colmapcuda=%2 & shift & shift
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
@@ -43,10 +43,12 @@ if not exist "%config%" (
 rem asks the user if they want to use conda and if already declared using the cmdline arg it activates the declared env
 :condaask
 if defined useconda (
+    if %useconda% == "NULL" goto afteraskconda
     echo - activating %useconda% 
     call conda activate "%useconda%" 
     goto afteraskconda
 )  
+
     set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
     if %condapause% == Y (
         set /p condaenv=" - which conda env you would like to use?: "
