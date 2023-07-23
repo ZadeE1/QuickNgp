@@ -36,7 +36,7 @@
    
 5. run **imagestonerf.bat** the speed of this process may depend on what hardware you are running
     
-6. (**OPTIONAL**) running **openproject.bat** will open instant-ngp and 
+6. (**OPTIONAL**) running **openproject.bat** will quickly open instant-ngp
 
 
 ## **Command line args**
