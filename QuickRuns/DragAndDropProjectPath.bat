@@ -32,3 +32,7 @@ for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 rem Pause the batch file so the user can see the output.
 pause
 exit 0
+
+:TRIM
+SET %2=%1
+GOTO :EOF
