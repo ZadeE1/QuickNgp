@@ -58,6 +58,7 @@
 | -h                      | Prints help page                             |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmaprun     | Runs colmap in order to convert images into a nerf|
+| --highdetail   | Changes camera position accuracy to the highest level|
 
 
 
