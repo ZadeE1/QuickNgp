@@ -61,5 +61,5 @@
 
 
 
-buildfromscratch.bat may not work as it still has some bugs
+some things may not work as it still in progress
 

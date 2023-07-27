@@ -1,4 +1,5 @@
 @echo off
+setlocal
 
 rem batch var is refering to the folder that this bat file is sitting in
 for %%i in ("%~dp0..") do set "folder=%%~fi"
@@ -18,13 +19,14 @@ exit 0
 if /I "%1" == "-h" call :Help 
 if /I "%1" == "--conda" set useconda=%2 & shift & shift
 if /I "%1" == "--colmaprun" set colmap_run=%2 & shift & shift
+if /I "%1" == "--highdetail" set highdetail=%2 & shift & shift
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
 
 
 if defined useconda call :TRIM %useconda% useconda 
 if defined colmap_run call :TRIM %colmap_run% colmap_run 
-
+if defined highdetail call :TRIM %highdetail% highdetail 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
 set config=%batch%config.txt
@@ -119,9 +121,21 @@ if not "%colmap_run%" equ "N" if not "%colmap_run%" equ "Y" goto AskUseColmap
 
 :continue
 rem runs colmap2nerf.py only with Y is selected
+
+set colmap_command = ""
+
 cd %ProjectDir%
 echo - %cd%
-if %colmap_run% == Y (call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images%) else (echo - not running colmap) 
+if %colmap_run% == Y (
+    if "%highdetail%" == Y (
+        call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images% --colmap_matcher exhaustive
+    ) else (
+        call python %ColmapTwoNerf% --overwrite --run_colmap --images %Images%
+    )
+    
+) else (
+        echo - not running colmap
+) 
 
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
@@ -130,7 +144,7 @@ call instant-ngp.exe %ProjectDir%
 
 cd %batch%
 pause
-
+endlocal
 :TRIM
 SET %2=%1
 GOTO :EOF
