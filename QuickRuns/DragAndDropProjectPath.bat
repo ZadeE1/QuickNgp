@@ -13,11 +13,12 @@ call :TRIM %config% config
 if not exist "%config%" (
     echo - config.txt doesnt exist
     echo - creating config.txt 
-    (echo NgpPath= && echo ProjectDir= ) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > %config%
 )
 
 rem Get the path of the dropped file.
 set "droppedPath=%~1"
+echo %droppedPath%
 
 rem Check if the file was dropped.
 if not defined droppedPath (
@@ -27,7 +28,7 @@ if not defined droppedPath (
 )
 
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
-(echo NgpPath=%NgpPath% && echo ProjectDir=%droppedPath%) > config.txt
+(echo NgpPath=%NgpPath% && echo ProjectDir=%droppedPath%) > %config%
 
 rem Pause the batch file so the user can see the output.
 pause

@@ -35,7 +35,7 @@ set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
     echo - creating/writing to config.txt 
-    (echo NgpPath= && echo ProjectDir= ) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > %config%
     echo - done
     echo - program will not work until config paths are set
     pause

@@ -36,7 +36,7 @@ call :TRIM %config% config
 if not exist "%config%" (
     echo - config.txt doesnt exist
     echo - creating config.txt 
-    (echo NgpPath= && echo ProjectDir= ) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > %config%
 )
 
 
@@ -80,7 +80,7 @@ rem loads the config file and updates it
 echo - reconfiguring config.txt to make NgpPath to: %batch%%versionngp%
 set config=%batch%config.txt
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
-(echo NgpPath=%batch%%versionngp% && echo ProjectDir=%ProjectDir%) > config.txt
+(echo NgpPath=%batch%%versionngp% && echo ProjectDir=%ProjectDir%) > %config%
 
 rem loads new config vars and trims ngppath so no errors happen
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a

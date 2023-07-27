@@ -12,7 +12,7 @@ set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
     echo - creating config.txt 
-    (echo NgpPath= && echo ProjectDir= ) > config.txt
+    (echo NgpPath= && echo ProjectDir= ) > %config%
 )
 
 rem installs instang-ngp from 
@@ -30,7 +30,7 @@ echo - reconfiguring config.txt to make NgpPath to: %batch%instant-ngp
 set config=%batch%config.txt
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
-(echo NgpPath=%batch%instant-ngp && echo ProjectDir=%ProjectDir%) > config.txt
+(echo NgpPath=%batch%instant-ngp && echo ProjectDir=%ProjectDir%) > %config%
 rem loads new config vars
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
