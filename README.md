@@ -39,25 +39,25 @@
 6. (**OPTIONAL**) running `openproject.bat` in `QuickRuns` will quickly open `instant-ngp`
 
 
-## 1.3. **Command line args**
+## 1.3. **Command line shortcuts**
 ### 1.3.1. Intall bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints all commands                                      |
+| -h                      | Prints help page                                     |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
-| --colmapforcuda `(Y/N)` | Installs the cuda version of colmap for supported devices|
+| --colmapforcuda | Installs the cuda version of colmap for supported devices|
 ### 1.3.2. videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints all commands                                      |
+| -h                      | Prints help page                                    |
 | --video  `Vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
 ### 1.3.3. imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints all commands                                      |
+| -h                      | Prints help page                             |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
-| --colmaprun `(Y/N)`    | Runs colmap in order to convert images into a nerf       |
+| --colmaprun     | Runs colmap in order to convert images into a nerf|
 
 
 
