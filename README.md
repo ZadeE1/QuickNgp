@@ -50,7 +50,7 @@
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page                                    |
-| --video  `Vid-name`     | The target video to convert to images inside the project dir|
+| --video  `vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
 ### 1.3.3. imagestonerf.bat
 | Command                 | Use                                                      |
