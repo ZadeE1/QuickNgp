@@ -21,7 +21,7 @@ exit 0
 :GETOPTS
 if /I "%1" == "-h" call :Help 
 if /I "%1" == "--conda" set useconda=%2 & shift & shift 
-if /I "%1" == "--colmapforcuda" set colmapcuda=%2 & shift & shift
+if /I "%1" == "--colmapforcuda" set "colmapcuda=Y" & shift 
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
 

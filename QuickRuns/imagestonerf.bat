@@ -17,16 +17,18 @@ exit 0
 
 :GETOPTS
 if /I "%1" == "-h" call :Help 
-if /I "%1" == "--conda" set useconda=%2 & shift & shift
-if /I "%1" == "--colmaprun" set colmap_run=Y & shift & shift
-if /I "%1" == "--highdetail" set highdetail=Y & shift & shift 
+if /I "%1" == "--conda" set useconda=%2 & shift & shift 
+if /I "%1" == "--colmaprun" set "colmap_run=Y" & shift 
+if /I "%1" == "--highdetail" set "highdetail=Y" & shift 
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
-
 
 if defined useconda call :TRIM %useconda% useconda 
 if defined colmap_run call :TRIM %colmap_run% colmap_run 
 if defined highdetail call :TRIM %highdetail% highdetail 
+
+pause 
+exit
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
 set config=%batch%config.txt
