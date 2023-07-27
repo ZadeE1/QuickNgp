@@ -20,7 +20,7 @@
   
 - any numerical questions can only be responded to in numbers or it can create unwanted errors
   
-- when running the `install_rtx_3000_and_4000.bat` you agree to the Licence that comes with this repo
+- when running the `install_rtx_3000_and_4000.bat` or any `Install bats` you agree to the Licence that comes with this repo
   
 - build instant ngp yourself if any problems occur refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run `buildfromscratch.bat` and edit NgpPath in `config.txt` to where you built instant-ngp
 
