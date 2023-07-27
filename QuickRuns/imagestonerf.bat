@@ -27,8 +27,6 @@ if defined useconda call :TRIM %useconda% useconda
 if defined colmap_run call :TRIM %colmap_run% colmap_run 
 if defined highdetail call :TRIM %highdetail% highdetail 
 
-pause 
-exit
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
 set config=%batch%config.txt
