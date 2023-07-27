@@ -18,8 +18,8 @@ exit 0
 :GETOPTS
 if /I "%1" == "-h" call :Help 
 if /I "%1" == "--conda" set useconda=%2 & shift & shift
-if /I "%1" == "--colmaprun" set colmap_run=%2 & shift & shift
-if /I "%1" == "--highdetail" set highdetail=%2 & shift & shift
+if /I "%1" == "--colmaprun" set colmap_run=Y & shift & shift
+if /I "%1" == "--highdetail" set highdetail=Y & shift & shift 
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
 
@@ -98,7 +98,7 @@ if defined useconda (
         call conda activate "%useconda%" 
         goto afteraskconda)
 )  
-    if not defined condapause set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
+    set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
     if %condapause% == Y (
         set /p condaenv=" - which conda env you would like to use?: "
         echo - activating %condaenv%
