@@ -62,22 +62,24 @@ if not defined %NgpPath% (
         exit 1
     )
 ) 
+rem this removes trailing white spaces so that windows can properly determine the projectdir
+CALL :TRIM %ProjectDir% ProjectDir
+CALL :TRIM %NgpPath% NgpPath
+cd %ProjectDir%
 
 rem setting path for images
 set Images=%ProjectDir%\images
 CALL :TRIM %Images% Images
 
+echo "%Images%"
+
 rem checks if images dir exists else it creates it
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
     cd %ProjectDir%
-    call mkdir images
-    
+    call mkdir %Images%
 )
 
-rem this removes trailing white spaces so that windows can properly determine the projectdir
-CALL :TRIM %ProjectDir% ProjectDir
-CALL :TRIM %NgpPath% NgpPath
 
 if not defined video set /p video=" - Name of video inside %ProjectDir%: "
 set video=%ProjectDir%\%video%
@@ -91,6 +93,7 @@ if not exist %video% (
     pause
     exit 1
 )
+CALL :TRIM %ProjectDir% ProjectDir
 cd %ProjectDir%\images
 
 call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
