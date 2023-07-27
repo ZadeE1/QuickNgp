@@ -6,7 +6,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd %batch%
+cd /d%batch%
 
 rem trim function is used to remove trailing whitespaces when reading from the config.txt
 
@@ -56,10 +56,10 @@ CALL :TRIM %NgpPath% NgpPath
 
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
-cd %NgpPath%
+cd /d%NgpPath%
 call instant-ngp.exe %ProjectDir% --no-train
 
-cd %batch%
+cd /d%batch%
 pause
 exit 0
 

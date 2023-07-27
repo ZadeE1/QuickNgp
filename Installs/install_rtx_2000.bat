@@ -8,7 +8,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd %batch%
+cd /d%batch%
 
 
 goto GETOPTS
@@ -90,13 +90,13 @@ echo - attempting to install required python packages
 echo - #####################################################
 
 rem installs required python packages
-cd %NgpPath%
+cd /d%NgpPath%
 call pip install -r requirements.txt
 echo - #####################################################
 
 rem changes to script path in order to install colmap
 echo - changing dir to %NgpPath%\scripts
-cd %NgpPath%\scripts
+cd /d%NgpPath%\scripts
 
 
 
@@ -131,7 +131,7 @@ rem installs ffmpeg
 call download_ffmpeg.bat
 
 echo - install completed successfully
-cd %batch%
+cd /d%batch%
 pause
 exit 0
 

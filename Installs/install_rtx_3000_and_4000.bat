@@ -8,7 +8,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd %batch%
+cd /d%batch%
 
 
 goto GETOPTS
@@ -25,8 +25,7 @@ if /I "%1" == "--colmapforcuda" set "colmapcuda=Y" & shift
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
 
-echo %useconda% %colmapcuda%
-pause  & exit
+
 
 if defined useconda call :TRIM %useconda% useconda 
 if defined colmapcuda call :TRIM %colmapcuda% colmapcuda 
@@ -92,13 +91,13 @@ echo - attempting to install required python packages
 echo - #####################################################
 
 rem installs required python packages
-cd %NgpPath%
+cd /d%NgpPath%
 call pip install -r requirements.txt
 echo - #####################################################
 
 rem changes to script path in order to install colmap
 echo - changing dir to %NgpPath%\scripts
-cd %NgpPath%\scripts
+cd /d%NgpPath%\scripts
 
 
 
@@ -133,7 +132,7 @@ rem installs ffmpeg
 call download_ffmpeg.bat
 
 echo - install completed successfully
-cd %batch%
+cd /d%batch%
 pause
 exit 0
 

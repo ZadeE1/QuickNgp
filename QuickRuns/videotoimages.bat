@@ -5,7 +5,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd %batch%
+cd /d%batch%
 
 goto GETOPTS
 
@@ -65,18 +65,20 @@ if not defined %NgpPath% (
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
-cd %ProjectDir%
+cd /d"%ProjectDir%"
+
+
 
 rem setting path for images
 set Images=%ProjectDir%\images
 CALL :TRIM %Images% Images
 
-echo "%Images%"
+echo "%Images%" %cd%
 
 rem checks if images dir exists else it creates it
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
-    cd %ProjectDir%
+    cd /d%ProjectDir%
     call mkdir %Images%
 )
 
@@ -94,7 +96,7 @@ if not exist %video% (
     exit 1
 )
 CALL :TRIM %ProjectDir% ProjectDir
-cd %ProjectDir%\images
+cd /d%ProjectDir%\images
 
 call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
 

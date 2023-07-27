@@ -5,7 +5,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd %batch%
+cd /d%batch%
 
 rem config loading
 set config=%batch%config.txt
