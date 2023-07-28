@@ -65,7 +65,7 @@ if not defined %NgpPath% (
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
-cd /d"%ProjectDir%"
+cd /d "%ProjectDir%"
 
 
 
@@ -82,6 +82,11 @@ if not exist %Images% (
     call mkdir %Images%
 )
 
+
+
+cd /d%ProjectDir%
+RMDIR %Images% /S /Q
+call mkdir %Images%
 
 if not defined video set /p video=" - Name of video inside %ProjectDir%: "
 set video=%ProjectDir%\%video%
