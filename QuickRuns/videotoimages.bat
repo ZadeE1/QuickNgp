@@ -75,6 +75,7 @@ CALL :TRIM %Images% Images
 
 echo "%Images%" %cd%
 
+
 rem checks if images dir exists else it creates it
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
