@@ -28,13 +28,14 @@ echo - reconfiguring config.txt to make NgpPath to: %batch%instant-ngp
 set config=%batch%config.txt
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
-(echo NgpPath=%batch%instant-ngp && echo ProjectDir=%ProjectDir%) > %config%
+(echo NgpPath=%batch%Installs\instant-ngp && echo ProjectDir=%ProjectDir%) > %config%
 rem loads new config vars
 for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
 CALL :TRIM %NgpPath% NgpPath
-
+echo %NgpPath%
 cd /d %NgpPath%
+
 call cmake . -B build
 call cmake --build build --config RelWithDebInfo -j
 
