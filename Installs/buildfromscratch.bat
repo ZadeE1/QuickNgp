@@ -20,8 +20,6 @@ rem installs instang-ngp from
 
 
 echo - installing instant-ngp
-call git clone -q https://github.com/NVlabs/instant-ngp.git instant-ngp
-cd /d instant-ngp
 call git submodule update --init --recursive
 cd /d %batch%
 
