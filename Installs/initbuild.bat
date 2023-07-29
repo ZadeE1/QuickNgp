@@ -65,7 +65,7 @@ if %colmapcuda% == Y (
     call powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/colmap/colmap/releases/download/3.7/COLMAP-3.7-windows-cuda.zip', 'colmap.zip')"
 
     echo - Unzipping...
-    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force 
+    call powershell Expand-Archive colmap.zip -DestinationPath %NgpPath%\external\colmap -Force 
 ) else (
     if not %colmapcuda% == N (
         goto colmapask
@@ -76,7 +76,7 @@ if %colmapcuda% == Y (
     call powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/colmap/colmap/releases/download/3.7/COLMAP-3.7-windows-no-cuda.zip', 'colmap.zip')"
 
     echo - Unzipping...
-    call powershell Expand-Archive colmap.zip -DestinationPath ..\external\colmap -Force 
+    call powershell Expand-Archive colmap.zip -DestinationPath %NgpPath%\external\colmap -Force 
 )
 
 rem installs ffmpeg
