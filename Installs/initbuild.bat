@@ -37,12 +37,7 @@ CALL :TRIM %NgpPath% NgpPath
 echo %NgpPath%
 cd /d %batch%Installs\instant-ngp
 
-
-cmake . -B build
-del %batch%Installs\instant-ngp\build
-cmake . -B build
-
-cmake --build build --config RelWithDebInfo -j
+call git submodule update --init --recursive
 
 
 pause
