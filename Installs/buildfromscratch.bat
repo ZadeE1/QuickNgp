@@ -37,7 +37,7 @@ echo %NgpPath%
 cd /d %NgpPath%
 
 call cmake . -B build
-call cmake --build build --config RelWithDebInfo -j
+call cmake --build build --config release 
 
 
 pause
