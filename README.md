@@ -29,6 +29,7 @@
 2. run `cmakebuild.bat`
 3. if `cmakebuild.bat` fails, go inside `instant-ngp` and delete the `build` folder and try again
 
+
 ## 1.2. **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no `spaces`
    
