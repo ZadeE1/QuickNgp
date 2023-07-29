@@ -19,6 +19,7 @@ rem installs instang-ngp from
 
 
 
+
 echo - installing instant-ngp
 call git submodule update --init --recursive
 cd /d %batch%
