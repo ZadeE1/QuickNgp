@@ -4,7 +4,7 @@
 
 -  **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
   
-- **CMAKE, GIT & C/CPP COMPILER MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
+- **CMAKE GIT MSVC MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
 ## 1.1. **Things to know**
 - any paths with a space will cause errors which include:
@@ -24,11 +24,15 @@
   
 - build instant ngp yourself if any problems occur refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run `buildfromscratch.bat` and edit NgpPath in `config.txt` to where you built instant-ngp
 
+## 1.1.2 **How to build yourself**
+1. run `initbuild.bat`
+2. run `cmakebuild.bat`
+3. if `cmakebuild.bat` fails, go inside `instant-ngp` and delete the `build` folder and try again
 
 ## 1.2. **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no `spaces`
    
-2. run the `install_rtx_3000_and_4000.bat` or `buildfromscratch.bat` inside `Installs`
+2. run the `install_rtx_3000_and_4000.bat` or build your self 
    
 3. open the `config.txt` file and paste the full path to any empty folder right after the "=", it should look something like this `"ProjectDir=C:\project"` or alternativly drag and drop the project folder on to DragAndDropProjectDir.bat <br>  `note:` the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data 
    
