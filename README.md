@@ -26,8 +26,8 @@
 
 ## 1.1.2 **How to build yourself**
 1. run `initbuild.bat`
-2. run `cmakebuild.bat`
-3. if `cmakebuild.bat` fails, go inside `instant-ngp` and delete the `build` folder and try again
+2. (**OPTIONAL**) If you want dlss support [download vulkan sdk](https://sdk.lunarg.com/sdk/download/1.3.250.1/windows/VulkanSDK-1.3.250.1-Installer.exe) then run the installer and when it comes to a configuring simply press the `select all` button then continue
+3. run `cmakebuild.bat`, if it fails, go inside `instant-ngp` and delete the `build` folder and try again
 
 
 ## 1.2. **How to use**
