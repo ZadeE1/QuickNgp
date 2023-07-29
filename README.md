@@ -4,7 +4,7 @@
 
 -  **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
   
-- **CMAKE & GIT MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
+- **CMAKE, GIT & C/CPP COMPILER MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
 ## 1.1. **Things to know**
 - any paths with a space will cause errors which include:
