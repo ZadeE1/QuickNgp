@@ -37,9 +37,12 @@ CALL :TRIM %NgpPath% NgpPath
 echo %NgpPath%
 cd /d %batch%Installs\instant-ngp
 
-call cmake . -B build
-pause
-call cmake --build build --config RelWithDebInfo -j
+
+cmake . -B build
+del %batch%Installs\instant-ngp\build
+cmake . -B build
+
+cmake --build build --config RelWithDebInfo -j
 
 
 pause
