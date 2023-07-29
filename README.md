@@ -22,12 +22,15 @@
   
 - when running the `install_rtx_3000_and_4000.bat` or any `Install bats` you agree to the Licence that comes with this repo
   
-- build instant ngp yourself if any problems occur refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) or run `buildfromscratch.bat` and edit NgpPath in `config.txt` to where you built instant-ngp
+- build instant ngp yourself using included bats if any problems occur refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) 
 
 ## 1.1.2 **How to build yourself**
 1. run `initbuild.bat`
-2. run `cmakebuild.bat`
-3. if `cmakebuild.bat` fails, go inside `instant-ngp` and delete the `build` folder and try again
+  
+2. (**OPTIONAL**) If you want dlss support [download vulkan sdk](https://sdk.lunarg.com/sdk/download/1.3.250.1/windows/VulkanSDK-1.3.250.1-Installer.exe) then run the installer and when it comes to configuring simply press the `select all` button then continue until installed
+   
+3. run `cmakebuild.bat`, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try again, if that doesn't work refer [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) 
+
 
 ## 1.2. **How to use**
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no `spaces`
