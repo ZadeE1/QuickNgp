@@ -35,9 +35,10 @@ for /f "eol=; delims=;+" %%a in (%config%) do set %%a
 
 CALL :TRIM %NgpPath% NgpPath
 echo %NgpPath%
-cd /d %NgpPath%
+cd /d %batch%Installs\instant-ngp
 
 call cmake . -B build
+pause
 call cmake --build build --config RelWithDebInfo -j
 
 
