@@ -5,7 +5,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd /d%batch%
+cd /d %batch%
 
 goto GETOPTS
 
@@ -78,13 +78,13 @@ echo "%Images%" %cd%
 rem checks if images dir exists else it creates it
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
-    cd /d%ProjectDir%
+    cd /d %ProjectDir%
     call mkdir %Images%
 )
 
 
 
-cd /d%ProjectDir%
+cd /d %ProjectDir%
 RMDIR %Images% /S /Q
 call mkdir %Images%
 
@@ -101,7 +101,7 @@ if not exist %video% (
     exit 1
 )
 CALL :TRIM %ProjectDir% ProjectDir
-cd /d%ProjectDir%\images
+cd /d %ProjectDir%\images
 
 call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
 

@@ -6,7 +6,7 @@ for %%i in ("%~dp0..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
-cd /d%batch%
+cd /d %batch%
 
 goto GETOPTS
 
@@ -73,7 +73,7 @@ CALL :TRIM %NgpPath% NgpPath
 rem changes dir into the project folder which is where colmap will be run in and also making instant ngp work as intended
 echo - changing directory to project folder: %ProjectDir%
 echo - if you would like to change the project directory, please change it in config.txt
-cd /d%ProjectDir%
+cd /d %ProjectDir%
 
 
 set ColmapTwoNerf=%NgpPath%\scripts\colmap2nerf.py
@@ -124,7 +124,7 @@ rem runs colmap2nerf.py only with Y is selected
 
 set colmap_command = ""
 
-cd /d%ProjectDir%
+cd /d %ProjectDir%
 echo - %cd%
 if %colmap_run% == Y (
     if "%highdetail%" == Y (
@@ -139,10 +139,10 @@ if %colmap_run% == Y (
 
 rem runs instant ngp, opening automatically the colmap project 
 echo - running instant ngp
-cd /d%NgpPath%
+cd /d %NgpPath%
 call instant-ngp.exe %ProjectDir% 
 
-cd /d%batch%
+cd /d %batch%
 pause
 endlocal
 :TRIM
