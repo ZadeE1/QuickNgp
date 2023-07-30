@@ -10,10 +10,12 @@
 - **CMAKE GIT MSVC CUDA TOOLKIT CONDA MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
 ## 1.1. **Things to know**
-- any paths with a space will cause errors which include:
+- any paths with a space  will cause errors which include:
   - the location where you cloned/downloaded this repo
     
   - any paths that you input in the config.txt - config.txt will appear after running the install bat
+ 
+- any slashes at the end of any inputted path inside config.txt will cause errors
     
 - any Y/N questions can only be responded in capitals, Y or N
   
