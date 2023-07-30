@@ -1,4 +1,5 @@
-# **May be unstable - currently working on stable version**
+#THIS IS THE DEV `BRANCH` AND MAY HAVE INSTABILITIES
+
 
 # 1. **Makes creating a Nerf, simple and easy**, based on [Instant-ngp](https://github.com/NVlabs/instant-ngp)
 
