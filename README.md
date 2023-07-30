@@ -53,7 +53,7 @@
 | -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda | Installs the cuda version of colmap for supported devices|
-### 1.3.2. videotoimages.bat
+### 1.3.2. videotoimages.bat - currently doesnt work if you build instant ngp youself
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page - not implemented                               |
