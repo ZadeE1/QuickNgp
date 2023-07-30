@@ -53,7 +53,7 @@
 # 
 
 ## **Command line shortcuts**
-### Intall bats
+### Install bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page                                     |
