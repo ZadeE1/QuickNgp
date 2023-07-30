@@ -96,7 +96,9 @@ python nerfcapture2nerf.py --overwrite --save_path %nerfcap% --n_frames %frames%
 cd /d %batch%
 
 echo - If you would like to open this newly created nerf data 
-echo - drag and drop nerfcap folder in %ProjectDir% onto the DragAndDropProject.bat
+echo - drag and drop nerfcap folder %nerfcap% onto the DragAndDropProject.bat
+echo - if you run nerfcapture2nerf.bat again without changing the ProjectDir it
+echo - will create continously nested nerfcap folder 
 
 pause
 exit 0
