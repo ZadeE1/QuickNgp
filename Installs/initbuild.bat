@@ -80,7 +80,12 @@ if %colmapcuda% == Y (
 )
 
 rem installs ffmpeg
-call download_ffmpeg.bat
+echo - Downloading FFmpeg...
+powershell -Command "(New-Object Net.WebClient).DownloadFile('https://github.com/GyanD/codexffmpeg/releases/download/5.1.2/ffmpeg-5.1.2-essentials_build.zip', 'ffmpeg.zip')"
+
+echo - Unzipping...
+powershell Expand-Archive ffmpeg.zip -DestinationPath %NgpPath%\external\ffmpeg -Force
+
 
 
 pause
