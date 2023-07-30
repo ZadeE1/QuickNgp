@@ -1,4 +1,4 @@
-#THIS IS THE DEV `BRANCH` AND MAY HAVE INSTABILITIES
+# THIS IS THE DEV `BRANCH` AND MAY HAVE INSTABILITIES
 
 
 # 1. **Makes creating a Nerf, simple and easy**, based on [Instant-ngp](https://github.com/NVlabs/instant-ngp)
