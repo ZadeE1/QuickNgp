@@ -1,7 +1,7 @@
 # THIS IS THE DEV `BRANCH` AND MAY HAVE INSTABILITIES
 
 
-# 1. Makes creating a `Nerf`, `simple` and `easy`, based on [`Instant-ngp`](https://github.com/NVlabs/instant-ngp)
+# Makes creating a `Nerf`, `simple` and `easy`, based on [`Instant-ngp`](https://github.com/NVlabs/instant-ngp)
 
 - **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
@@ -9,7 +9,7 @@
   
 - **CMAKE GIT MSVC CUDA TOOLKIT CONDA MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
-## 1.1. **Things to know**
+## **Things to know**
 - any paths with a space  will cause errors which include:
   - the location where you cloned/downloaded this repo
     
@@ -29,7 +29,7 @@
   
 - build instant ngp yourself using included bats if any problems occur refer to [Compilation for Windows](https://github.com/NVlabs/instant-ngp#compilation:~:text=Compilation,config%20RelWithDebInfo%20%2Dj) 
 
-## 1.1.2 **How to build yourself**
+## **How to build yourself**
 1. run `initbuild.bat`
   
 2. (**OPTIONAL**) If you want dlss support [download vulkan sdk](https://sdk.lunarg.com/sdk/download/1.3.250.1/windows/VulkanSDK-1.3.250.1-Installer.exe) then run the installer and when it comes to configuring simply press the `select all` button then continue until installed
@@ -37,7 +37,7 @@
 3. run `cmakebuild.bat` make sure you run it from the `Installs` folder and using an activated conda environtment, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try again, if that doesn't work refer to [Compile errors](https://github.com/NVlabs/instant-ngp#troubleshooting-compile-errors) 
 
 
-## 1.2. **How to use**
+## **How to use - Video to Images To Nerf** 
 1. download this repo/clone it in any folder of your choice - make sure the path that you choose has no `spaces`
    
 2. run the `install_rtx_3000_and_4000.bat` or build your self 
@@ -50,21 +50,22 @@
     
 6. (**OPTIONAL**) running `openproject.bat` in `QuickRuns` will quickly open `instant-ngp`
 
+# 
 
-## 1.3. **Command line shortcuts**
-### 1.3.1. Intall bats
+## **Command line shortcuts**
+### Intall bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page                                     |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda | Installs the cuda version of colmap for supported devices|
-### 1.3.2. videotoimages.bat
+### videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page                                    |
 | --video  `vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
-### 1.3.3. imagestonerf.bat
+### imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page                             |
