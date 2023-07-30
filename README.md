@@ -7,7 +7,7 @@
 
 -  **NVIDIA GPU REQUIRED TO RUN AND USE INSTANT-NGP**
   
-- **CMAKE GIT MSVC CUDA TOOLKIT MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
+- **CMAKE GIT MSVC CUDA TOOLKIT CONDA MUST BE INSTALLED IF YOU WOULD LIKE TO BUILD FROM SCRATCH** 
 
 ## 1.1. **Things to know**
 - any paths with a space will cause errors which include:
@@ -32,7 +32,7 @@
   
 2. (**OPTIONAL**) If you want dlss support [download vulkan sdk](https://sdk.lunarg.com/sdk/download/1.3.250.1/windows/VulkanSDK-1.3.250.1-Installer.exe) then run the installer and when it comes to configuring simply press the `select all` button then continue until installed
    
-3. run `cmakebuild.bat`, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try again, if that doesn't work refer to [Compile errors](https://github.com/NVlabs/instant-ngp#troubleshooting-compile-errors) 
+3. run `cmakebuild.bat` make sure you run it from the `Installs` folder, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try again, if that doesn't work refer to [Compile errors](https://github.com/NVlabs/instant-ngp#troubleshooting-compile-errors) 
 
 
 ## 1.2. **How to use**
