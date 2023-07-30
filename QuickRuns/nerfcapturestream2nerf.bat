@@ -73,11 +73,25 @@ if not exist %nerfcap% (
     call mkdir %nerfcap%
 )
 
+:condaask
+set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): "
+    if %condapause% == Y (
+        set /p condaenv=" - which conda env you would like to use?: "
+        echo - activating %condaenv%
+        call conda activate %condaenv%
+    ) else (
+        if not %condapause% == N (
+            goto condaask
+        )
+    )
+
+
 if not defined frames set /p frames=" - Frames  ( 10 recommended ): "
 CALL :TRIM %frames% frames
 
+cd /d %NgpPath%\scripts\
 
-python %NgpPath%\scripts\nerfcapture2nerf.py --stream --overwrite --save_path %nerfcap% --n_frames %frames%
+python nerfcapture2nerf.py --stream --overwrite --save_path %nerfcap% --n_frames %frames%
 pause
 exit 0
 
