@@ -91,7 +91,7 @@ CALL :TRIM %frames% frames
 
 cd /d %NgpPath%\scripts\
 
-python nerfcapture2nerf.py --stream --overwrite --save_path %nerfcap% --n_frames %frames%
+python nerfcapture2nerf.py --overwrite --save_path %nerfcap% --n_frames %frames%
 
 cd /d %batch%
 
