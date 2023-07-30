@@ -16,14 +16,9 @@ exit 0
 
 :GETOPTS
 if /I "%1" == "-h" call :Help 
-if /I "%1" == "--video" set video=%2 & shift & shift
-if /I "%1" == "--fps" set fps=%2 & shift & shift
 if  "%1" == "" goto continue else goto GETOPTS
 :continue
-
-
-if defined video call :TRIM %video% video 
-if defined fps call :TRIM %fps% fps 
+ 
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
@@ -67,44 +62,24 @@ CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
 cd /d "%ProjectDir%"
 
+rem setting path for nerfcap dataset
+set nerfcap=%ProjectDir%\nerfcap
+CALL :TRIM %nerfcap% nerfcap
 
-
-rem setting path for images
-set Images=%ProjectDir%\images
-CALL :TRIM %Images% Images
-
-echo "%Images%" %cd%
-
-
-rem checks if images dir exists else it creates it
-if not exist %Images% (
-    echo - Images folder is being created inside %ProjectDir%
+rem checks if nerfcap dir exists else it creates it
+if not exist %nerfcap% (
+    echo - nerfcap folder is being created inside %ProjectDir%
     cd /d %ProjectDir%
-    call mkdir %Images%
+    call mkdir %nerfcap%
 )
 
-
-if not defined video set /p video=" - Name of video inside %ProjectDir%: "
-set video=%ProjectDir%\%video%
-
-if not defined fps set /p fps=" - Frames per second ( 5 recommended ): "
-CALL :TRIM %fps% fps
+if not defined frames set /p frames=" - Frames  ( 10 recommended ): "
+CALL :TRIM %frames% frames
 
 
-if not exist %video% (
-    echo - %video% does not exist
-    pause
-    exit 1
-)
-CALL :TRIM %ProjectDir% ProjectDir
-cd /d %ProjectDir%\images
-
-call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
-
+python %NgpPath%\scripts\nerfcapture2nerf.py --stream --overwrite --save_path %nerfcap% --n_frames %frames%
 pause
 exit 0
-
-
 
 
 :TRIM
