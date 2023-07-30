@@ -50,19 +50,19 @@
 ### 1.3.1. Intall bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                                     |
+| -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda | Installs the cuda version of colmap for supported devices|
 ### 1.3.2. videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                                    |
+| -h                      | Prints help page - not implemented                               |
 | --video  `vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
 ### 1.3.3. imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                             |
+| -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmaprun     | Runs colmap in order to convert images into a nerf|
 | --highdetail   | Changes camera position accuracy to the highest level|
