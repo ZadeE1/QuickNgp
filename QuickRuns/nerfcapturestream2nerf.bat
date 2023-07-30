@@ -92,6 +92,12 @@ CALL :TRIM %frames% frames
 cd /d %NgpPath%\scripts\
 
 python nerfcapture2nerf.py --stream --overwrite --save_path %nerfcap% --n_frames %frames%
+
+cd /d %batch%
+
+echo - If you would like to open this newly created nerf data 
+echo - drag and drop nerfcap folder in %ProjectDir% onto the DragAndDropProject.bat
+
 pause
 exit 0
 
