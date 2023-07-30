@@ -69,5 +69,5 @@
 
 
 
-some things may not work as it still in progress
+some things may not work as it still in progress *any* problems that occur please create an issue
 
