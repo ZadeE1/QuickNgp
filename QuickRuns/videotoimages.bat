@@ -87,6 +87,10 @@ if not exist %Images% (
     call mkdir %Images%
 )
 
+echo - clearing %Images%
+cd /d %ProjectDir%
+RMDIR %Images% /S /Q
+call mkdir %Images%
 
 if not defined video set /p video=" - Name of video inside %ProjectDir%: "
 set video=%ProjectDir%\%video%
