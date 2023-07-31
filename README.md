@@ -34,7 +34,7 @@
   
 2. (**OPTIONAL**) If you want dlss support [download vulkan sdk](https://sdk.lunarg.com/sdk/download/1.3.250.1/windows/VulkanSDK-1.3.250.1-Installer.exe) then run the installer and when it comes to configuring simply press the `select all` button then continue until installed
    
-3. run `cmakebuild.bat` make sure you run it from the `Installs` folder and using an activated conda environtment, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try again, if that doesn't work refer to [Compile errors](https://github.com/NVlabs/instant-ngp#troubleshooting-compile-errors) 
+3. run `cmakebuild.bat` make sure you run it from the `Installs` folder and using an activated conda environment, if it fails, go inside `instant-ngp` under the `Installs` folder and delete the `build` folder and try step 3 again, if that doesn't work refer to [Compile errors](https://github.com/NVlabs/instant-ngp#troubleshooting-compile-errors) 
 
 
 ## **How to use - Video to Images To Nerf** 
@@ -42,18 +42,18 @@
    
 2. run the `install_rtx_3000_and_4000.bat` or build your self 
    
-3. open the `config.txt` file and paste the full path to any empty folder right after the "=", it should look something like this `"ProjectDir=C:\project"` or alternativly drag and drop the project folder on to DragAndDropProjectDir.bat <br>  `note:` the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data 
+3. open the `config.txt` file and paste the full path to any empty folder right after the "=", it should look something like this `"ProjectDir=C:\project"` or alternativly drag and drop the project folder on to `DragAndDropProjectDir.bat` inside the `QuickRuns` folder <br>  `note:` the project folder is where any saved data will go including images, videos that you wish to convert into nerfs and generated colmap data 
    
-4. place any video that you want to convert into a nerf inside the project folder, then run the `videotoimages.bat` in `QuickRuns` <br>it will ask " - Name of video inside Where ever you decided the project path to be: " and respond with the video file name - for example, `VIDEO.MP4` <br> it will then ask, " - Frames per second ( 5 recommended ): " - high fps will produce better nerf models but will negatively impact performance
+4. place any video that you want to convert into a nerf inside the project folder, then run the `videotoimages.bat` in `QuickRuns\NERF` <br>it will ask " - Name of video inside Where ever you decided the project path to be: " and respond with the video file name - for example, `VIDEO.MP4` <br> it will then ask, " - Frames per second ( 5 recommended ): " - high fps will produce better nerf models but will negatively impact performance
    
-5. run `imagestonerf.bat` in `QuickRuns` the speed of this process may depend on what hardware you are running
+5. run `imagestonerf.bat` in `QuickRuns\NERF` the speed of this process may depend on what hardware you are running
     
-6. (**OPTIONAL**) running `openproject.bat` in `QuickRuns` will quickly open `instant-ngp`
+6. (**OPTIONAL**) running `openproject.bat` in `QuickRuns` will quickly open `instant-ngp` into your projectdir
 
-# 
+
 
 ## **Command line shortcuts**
-### Install bats
+### Any quick install bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page - not implemented                               |
