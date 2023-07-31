@@ -2,7 +2,7 @@
 setlocal
 
 rem batch var is refering to the folder that this bat file is sitting in
-for %%i in ("%~dp0..") do set "folder=%%~fi"
+for %%i in ("%~dp0..\..") do set "folder=%%~fi"
 call :TRIM %folder% folder
 set batch=%folder%\
 
