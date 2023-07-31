@@ -59,13 +59,13 @@
 | -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda | Installs the cuda version of colmap for supported devices|
-### videotoimages.bat
+### NERF\videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page - not implemented                               |
 | --video  `vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
-### imagestonerf.bat
+### NERF\imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
 | -h                      | Prints help page - not implemented                               |
