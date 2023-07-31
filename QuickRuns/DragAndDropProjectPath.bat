@@ -22,7 +22,7 @@ echo %droppedPath%
 
 rem Check if the file was dropped.
 if not defined droppedPath (
-  echo No path was dropped.
+  echo - No path was dropped.
   pause
   exit 0
 )

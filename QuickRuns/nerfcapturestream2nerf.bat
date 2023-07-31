@@ -22,6 +22,7 @@ if  "%1" == "" goto continue else goto GETOPTS
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
+echo - checking if config.txt exists
 set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
@@ -67,6 +68,7 @@ set nerfcap=%ProjectDir%\nerfcap
 CALL :TRIM %nerfcap% nerfcap
 
 rem checks if nerfcap dir exists else it creates it
+echo - checking if %nerfcap% folder exists
 if not exist %nerfcap% (
     echo - nerfcap folder is being created inside %ProjectDir%
     cd /d %ProjectDir%
@@ -89,6 +91,7 @@ set /p  condapause=" - use conda - recommended if you have it installed  (Y/N): 
 if not defined frames set /p frames=" - Frames  ( 10 recommended ): "
 CALL :TRIM %frames% frames
 
+echo - changing dir to %NgpPath%\scripts\
 cd /d %NgpPath%\scripts\
 
 python nerfcapture2nerf.py --overwrite --save_path %nerfcap% --n_frames %frames%
