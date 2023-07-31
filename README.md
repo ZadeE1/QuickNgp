@@ -72,6 +72,3 @@
 | --highdetail   | Changes camera position accuracy to the highest level|
 
 
-
-some things may not work as it still in progress *any* problems that occur please create an issue
-
