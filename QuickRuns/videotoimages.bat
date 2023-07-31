@@ -27,6 +27,7 @@ if defined fps call :TRIM %fps% fps
 
 
 rem makes sure the config.txt exists and has the correct path "Names" being refrenced and if it doesnt it creates a boilerplate
+echo - checking if config.txt exists
 set config=%batch%config.txt
 if not exist %config% (
     echo - config.txt doesnt exist
@@ -65,6 +66,8 @@ if not defined %NgpPath% (
 rem this removes trailing white spaces so that windows can properly determine the projectdir
 CALL :TRIM %ProjectDir% ProjectDir
 CALL :TRIM %NgpPath% NgpPath
+
+echo - changing dir to %ProjectDir%
 cd /d "%ProjectDir%"
 
 
@@ -77,6 +80,7 @@ echo "%Images%" %cd%
 
 
 rem checks if images dir exists else it creates it
+echo - checking if %Images% path exists
 if not exist %Images% (
     echo - Images folder is being created inside %ProjectDir%
     cd /d %ProjectDir%
@@ -90,15 +94,18 @@ set video=%ProjectDir%\%video%
 if not defined fps set /p fps=" - Frames per second ( 5 recommended ): "
 CALL :TRIM %fps% fps
 
-
+echo - checking if the videos exists
 if not exist %video% (
     echo - %video% does not exist
     pause
     exit 1
 )
 CALL :TRIM %ProjectDir% ProjectDir
+
+echo - changing directory to %ProjectDir%\images
 cd /d %ProjectDir%\images
 
+echo - running ffmpeg
 call %NgpPath%\external\ffmpeg\ffmpeg-5.1.2-essentials_build\bin\ffmpeg.exe -i %video% -vf fps=%fps% "frame_%%%%03d.png"
 
 pause
