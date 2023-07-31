@@ -1,7 +1,5 @@
-# THIS IS THE DEV `BRANCH` AND MAY HAVE INSTABILITIES
-
-
 # Makes creating a `Nerf`, `simple` and `easy`, based on [`Instant-ngp`](https://github.com/NVlabs/instant-ngp)
+
 
 - **Requires Python To Be Installed 3.8 And Above Along With The Latest Cuda Driver**
 
@@ -56,19 +54,19 @@
 ### Install bats
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                                     |
+| -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmapforcuda | Installs the cuda version of colmap for supported devices|
 ### videotoimages.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                                    |
+| -h                      | Prints help page - not implemented                               |
 | --video  `vid-name`     | The target video to convert to images inside the project dir|
 | --fps `fps`             | How many frames you will extract for every second of the video|
 ### imagestonerf.bat
 | Command                 | Use                                                      |
 | :---------------------- | :------------------------------------------------------- |
-| -h                      | Prints help page                             |
+| -h                      | Prints help page - not implemented                               |
 | --conda  `env-name`     | Activates the conda environment you chose, passing 0 will not activate conda but will avoid it asking if you would like to use conda|
 | --colmaprun     | Runs colmap in order to convert images into a nerf|
 | --highdetail   | Changes camera position accuracy to the highest level|
